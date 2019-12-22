@@ -4,17 +4,19 @@
 #                 Toyoda Masashi
 #		  (mtoyoda@acm.org)
 #	Last Modified: 2014/03/31
+#
+#	Modified by ya0201: 2019/12/22
 #==========================================
 
 CC=gcc
 CFLAGS=-O -Wall
 
-all: sl
+all: be
 
-sl: sl.c sl.h
-	$(CC) $(CFLAGS) -o sl sl.c -lncurses
+be: be.c be.h
+	$(CC) $(CFLAGS) -o be be.c -lncurses
 
 clean:
-	rm -f sl
+	rm -f be
 
 distclean: clean

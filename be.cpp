@@ -312,6 +312,7 @@ int main(int argc, char *argv[]) {
   alcMakeContextCurrent(nullptr);
   alcDestroyContext(context);
   alcCloseDevice(device);
+  delete[] data;
 
   // finalize curses
   mvcur(0, COLS - 1, LINES - 1, 0);

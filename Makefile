@@ -8,13 +8,13 @@
 #	Modified by ya0201: 2019/12/22
 #==========================================
 
-CC=gcc
+CC=g++
 CFLAGS=-O -Wall
 
 all: be
 
-be: be.c be.h
-	$(CC) $(CFLAGS) -o be be.c -lncurses
+be: be.cpp be.h
+	$(CC) $(CFLAGS) -o be be.cpp -lncurses -framework OpenAL
 
 clean:
 	rm -f be

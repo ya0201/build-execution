@@ -22,7 +22,7 @@ build: be.cpp be.h
 install:
 	mkdir -p ${HOME}/.local/bin
 	mv be ${HOME}/.local/bin/be
-	echo 'Install to ${HOME}/.local/bin'
+	echo 'Installed to ${HOME}/.local/bin'
 
 .PHONY: clean
 clean:

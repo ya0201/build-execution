@@ -6,6 +6,7 @@
  *        Last Modified: 2014/06/03
  *
  *	Modified to be.cpp by ya0201: 2019/12/22~
+ *	OpenAL related codes are based on: https://stackoverflow.com/a/56267258
  *========================================
  */
 /* be version 1.00 : Initial build executioner.                              */

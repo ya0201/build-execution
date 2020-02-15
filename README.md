@@ -1,6 +1,6 @@
 # Build Execution
 
-ターミナルで演習が出て音が鳴るとたのしいね
+ターミナルで演出が出て音が鳴るとたのしいね
 
 ## Requirements
 - macos

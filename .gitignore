@@ -1,3 +1,4 @@
 /be
-data/*
+data/*.wav
+data/raw/*
 .DS_Store

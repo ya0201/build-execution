@@ -7,6 +7,9 @@
 - g++
 
 ## Usage
+1. data/shinobi_execution_se.wavを用意します
+
+1. 
 ```
 $ make
 $ be

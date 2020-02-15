@@ -5,7 +5,7 @@
 #		  (mtoyoda@acm.org)
 #	Last Modified: 2014/03/31
 #
-#	Modified by ya0201: 2019/12/22
+#	Modified by ya0201: 2019/12/22~
 #==========================================
 
 CC=g++

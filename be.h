@@ -5,7 +5,7 @@
  *		  (mtoyoda@acm.org)
  *	Last Modified: 2014/06/03
  *
- *	Modified by ya0201: 2019/12/22
+ *	Modified to be.h by ya0201: 2019/12/22~
  *========================================
  */
 

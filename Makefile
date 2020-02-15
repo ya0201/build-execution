@@ -11,12 +11,21 @@
 CC=g++
 CFLAGS=-O -Wall
 
-all: be
+.PHONY: all
+all: build install
 
-be: be.cpp be.h
+.PHONY: build
+build: be.cpp be.h
 	$(CC) $(CFLAGS) -o be be.cpp -lncurses -framework OpenAL
 
+.PHONY: install
+install:
+	mkdir -p ${HOME}/.local/bin
+	mv be ${HOME}/.local/bin/be
+	echo 'Install to ${HOME}/.local/bin'
+
+.PHONY: clean
 clean:
-	rm -f be
+	rm -f be ${HOME}/.local/bin/be
 
 distclean: clean

@@ -12,11 +12,17 @@ CC=g++
 CFLAGS=-O -Wall
 
 .PHONY: all
-all: build install
+all: be install
 
-.PHONY: build
-build: be.cpp be.h
-	$(CC) $(CFLAGS) -o be be.cpp -lncurses -framework OpenAL
+se.o: data/se.wav
+	gobjcopy -S -I binary -O mach-o-x86-64 data/se.wav se.o
+
+be.o: be.cpp be.h
+	# $(CC) $(CFLAGS) -o be be.cpp -lncurses -framework OpenAL
+	$(CC) $(CFLAGS) -c be.cpp
+
+be: be.o se.o
+	$(CC) $(CFLAGS) -o be be.o se.o -lncurses -framework OpenAL
 
 .PHONY: install
 install:

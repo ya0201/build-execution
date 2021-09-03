@@ -2,3 +2,4 @@
 data/*.wav
 data/raw/*
 .DS_Store
+*.o

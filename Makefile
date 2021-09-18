@@ -14,11 +14,11 @@ CFLAGS=-O -Wall
 .PHONY: all
 all: build
 
-data/ses.h: data/shinobi_execution_se.wav
-	xxd -i data/shinobi_execution_se.wav > data/ses.h
+sounds/ses.h: sounds/shinobi_execution_se.wav
+	xxd -i sounds/shinobi_execution_se.wav > sounds/ses.h
 
 .PHONY: build
-build: be.cpp be.h data/ses.h
+build: be.cpp be.h sounds/ses.h
 	$(CC) $(CFLAGS) -o be be.cpp -lncurses -framework OpenAL
 
 .PHONY: install

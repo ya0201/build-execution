@@ -54,7 +54,7 @@
 #include <OpenAL/al.h>
 #include <OpenAL/alc.h>
 #include "be.h"
-#include "data/ses.h"
+#include "sounds/ses.h"
 
 int my_mvaddstr(int y, int x, char *str) {
     for ( ; x < 0; ++x, ++str)

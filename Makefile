@@ -25,7 +25,7 @@ build: be.cpp be.h sounds/ses.h
 install: build
 	mkdir -p ${HOME}/.local/bin
 	mv be ${HOME}/.local/bin/be
-	echo 'Installed to ${HOME}/.local/bin'
+	@echo 'Installed to ${HOME}/.local/bin'
 
 .PHONY: clean
 clean:

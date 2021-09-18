@@ -1,4 +1,5 @@
 /be
 data/*.wav
+data/*.h
 data/raw/*
 .DS_Store

@@ -12,14 +12,17 @@ CC=g++
 CFLAGS=-O -Wall
 
 .PHONY: all
-all: build install
+all: build
+
+data/ses.h: data/shinobi_execution_se.wav
+	xxd -i data/shinobi_execution_se.wav > data/ses.h
 
 .PHONY: build
-build: be.cpp be.h
+build: be.cpp be.h data/ses.h
 	$(CC) $(CFLAGS) -o be be.cpp -lncurses -framework OpenAL
 
 .PHONY: install
-install:
+install: build
 	mkdir -p ${HOME}/.local/bin
 	mv be ${HOME}/.local/bin/be
 	echo 'Installed to ${HOME}/.local/bin'

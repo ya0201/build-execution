@@ -1,4 +1,5 @@
 /be
-data/*.wav
-data/raw/*
+sounds/*.wav
+sounds/*.h
+sounds/raw/*
 .DS_Store

@@ -12,17 +12,20 @@ CC=g++
 CFLAGS=-O -Wall
 
 .PHONY: all
-all: build install
+all: build
+
+sounds/ses.h: sounds/shinobi_execution_se.wav
+	xxd -i sounds/shinobi_execution_se.wav > sounds/ses.h
 
 .PHONY: build
-build: be.cpp be.h
+build: be.cpp be.h sounds/ses.h
 	$(CC) $(CFLAGS) -o be be.cpp -lncurses -framework OpenAL
 
 .PHONY: install
-install:
+install: build
 	mkdir -p ${HOME}/.local/bin
 	mv be ${HOME}/.local/bin/be
-	echo 'Installed to ${HOME}/.local/bin'
+	@echo 'Installed to ${HOME}/.local/bin'
 
 .PHONY: clean
 clean:

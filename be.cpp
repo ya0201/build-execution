@@ -45,6 +45,7 @@
 
 #include <curses.h>
 #include <fstream>
+#include <sstream>
 #include <iostream>
 #include <signal.h>
 #include <stdio.h>
@@ -53,6 +54,7 @@
 #include <OpenAL/al.h>
 #include <OpenAL/alc.h>
 #include "be.h"
+#include "sounds/ses.h"
 
 int my_mvaddstr(int y, int x, char *str) {
     for ( ; x < 0; ++x, ++str)
@@ -142,10 +144,13 @@ static int convert_to_int(char* buffer, int len) {
 }
 
 //Location and size of data is found here: http://www.topherlee.com/software/pcm-tut-wavformat.html
-static char* load_wav(std::string filename, int& channels, int& sampleRate, int& bps, int& size) {
+static char* load_wav(const unsigned char* array, const unsigned int arraysize, int& channels, int& sampleRate, int& bps, int& size) {
   char buffer[4];
+  std::stringstream in;
+  for(int i=0; i < arraysize; i++) {
+    in << array[i];
+  }
 
-  std::ifstream in(filename.c_str());
   in.read(buffer, 4);
 
   if(strncmp(buffer, "RIFF", 4) != 0) {
@@ -216,7 +221,7 @@ static char* load_wav(std::string filename, int& channels, int& sampleRate, int&
 
   in.read(data, size);//Read audio data into buffer, return.
 
-  in.close();
+  // in.close();
 
   return data;    
 }
@@ -252,7 +257,7 @@ int main(int argc, char *argv[]) {
   attrset(COLOR_PAIR(1));
 
   // initialize OpenAL
-  data = load_wav("data/shinobi_execution_se.wav", channel, sample_rate, bps, size);
+  data = load_wav(data_shinobi_execution_se_wav, data_shinobi_execution_se_wav_len, channel, sample_rate, bps, size);
   device = alcOpenDevice(nullptr);
   if (!device) {
     std::cout << "Could not open sound device" << std::endl;

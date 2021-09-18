@@ -54,7 +54,7 @@
 #include <OpenAL/al.h>
 #include <OpenAL/alc.h>
 #include "be.h"
-#include "sounds/ses.h"
+#include "sounds/sounds.h"
 
 int my_mvaddstr(int y, int x, char *str) {
     for ( ; x < 0; ++x, ++str)
@@ -257,7 +257,7 @@ int main(int argc, char *argv[]) {
   attrset(COLOR_PAIR(1));
 
   // initialize OpenAL
-  data = load_wav(data_shinobi_execution_se_wav, data_shinobi_execution_se_wav_len, channel, sample_rate, bps, size);
+  data = load_wav(shinobi_execution_se_wav, shinobi_execution_se_wav_len, channel, sample_rate, bps, size);
   device = alcOpenDevice(nullptr);
   if (!device) {
     std::cout << "Could not open sound device" << std::endl;

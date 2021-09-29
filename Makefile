@@ -9,7 +9,7 @@
 #==========================================
 
 CC=g++
-CFLAGS=-O -Wall
+CFLAGS=-O -Wall -Wno-c++11-compat-deprecated-writable-strings -Wno-deprecated-declarations
 
 .PHONY: all
 all: build
